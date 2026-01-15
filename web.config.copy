@@ -1,0 +1,18 @@
+<configuration>
+    <system.webServer>
+        <fastCgi>
+            <application fullPath="C:\inetpub\wwwroot\php\php-cgi.exe"
+                         activityTimeout="600"
+                         requestTimeout="600"
+                         instanceMaxRequests="10000">
+            </application>
+        </fastCgi>
+
+        <handlers>
+            <add name="PHP" path="*.php" verb="*" modules="FastCgiModule"
+                 scriptProcessor="C:\inetpub\wwwroot\php\php-cgi.exe"
+                 resourceType="File" requireAccess="Script" />
+        </handlers>
+        ...
+    </system.webServer>
+</configuration>
